@@ -1,0 +1,47 @@
+body {
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)),
+        url("../img//img\ bg\ pet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    font-family: "Readex Pro", sans-serif;
+    height: 100vh;
+}
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+header{
+    padding: 20px 40px 50px 40px;
+}
+
+header a {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    color: #bfbfbf;
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: center;
+}

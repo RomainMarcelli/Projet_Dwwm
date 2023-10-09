@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap");
+
+body {
+  background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url("../img/img\ bg\ pet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0;
+  font-family: "Readex Pro", sans-serif;
+  height: 100vh;
+  
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background: #fe3175;
+}
+::-webkit-scrollbar-thumb {
+  border: solid 0 transparent;
+  background-color: #ffffff;
+}
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+nav{
+  display: none;
+}
+
+
+.primary-button {
+  background: linear-gradient(45deg, #fd2b75, #ff4b2b);
+  border: 0;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 65px;
+  transition: 0.3s all;
+}
+
+.primary-button:hover {
+  background: linear-gradient(260deg, #fd2b75, #ff4b2b);
+}
+
+.secondary-button {
+  background: #ffffff;
+  border: 0;
+  border-radius: 30px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 25px;
+  transition: ease-out 0.3s;
+  text-transform: uppercase;
+  margin: 11px;
+}
+
+.secondary-button:hover {
+  background: linear-gradient(260deg, #fd2b75, #ff4b2b);
+  color: white;
+}
+
+.logo:hover {
+  color: #fd2b75;
+}
+
+#second_supp {
+  background: white;
+  border: 0;
+  border-radius: 30px;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 25px;
+  transition: ease-out 0.3s;
+  /* position: absolute;
+  right: 40px;
+  bottom: 25px; */
+}
+
+#second_supp:hover {
+  background: red;
+  color: white;
+}
+
+#mySidenav, .openBtn{
+  display: none;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  background: linear-gradient(90deg, #fe3175, #ff6f63);
+  border-radius: 10px;
+  box-shadow: 3px 4px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 70%;
+  padding: 10px 0;
+  margin-top: 5%;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow-y: scroll;
+  height: 95%;
+    width: 95%;
+}
+
+.petder {
+  display: none;
+}
+
+.form-content h2 {
+  color: white;
+  font-size: 55px;
+}
+
+.form-content h2 a {
+  color: white;
+}
+
+.form-content h3 {
+  color: #ffffff;
+  font-size: 33px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.form-content h4 {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.form-content p {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.form-content p a {
+  text-decoration: underline;
+  color: white;
+}
+
+form {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.fa-heart{
+  color: #FFACE4;
+}
+
+.main-informations input {
+  color: white;
+  font-weight: bold;
+  width: 80%;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0 0;
+  border: 2px solid white;
+  background: transparent;
+  transition: 0.3s;
+  outline: none;
+}
+::placeholder {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+
+.radio input[type="checkbox"] {
+  display: none;
+}
+
+.gender div {
+  display: inline-block;
+  margin: 5px;
+}
+
+.hobbies div{
+  display: inline-block;
+  margin: 5px;
+}
+
+.newColor{
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: 2px white solid;
+  border-radius: 50px;
+  padding: 10px 30px;
+  color: #ffffff;
+  font-size: 15px;
+  transition: 0.5s all;
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+}
+.newC{
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  background: transparent;
+  border: 0px white solid;
+}
+.newColorb{
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  background: transparent;
+  border: 0px white solid;
+}
+input.newC:focus-visible {
+  outline: none;
+}
+.radio div label span {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: 2px white solid;
+  border-radius: 50px;
+  padding: 10px 30px;
+  color: #ffffff;
+  font-size: 15px;
+  transition: 0.5s all;
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+}
+.radio div label input:hover ~ span {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 2px 20px white;
+}
+
+.radio div label input:active ~ span {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 2px 20px white;
+}
+.radio div label input:checked ~ span {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 2px 20px white;
+}
+
+
+
+.radio div label input[type="checkbox"]:checked ~ span {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 2px 20px white;
+}
+
+input:focus {
+  transform: scale(1.1);
+  border: 2px solid #e91e63;
+}
+
+
+
+.form-container .form-content .btn-login {
+  background: white;
+  color: #fe3175;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px white;
+  border-radius: 30px;
+  border: 2px solid white;
+  margin: 80px 0px 20px 0;
+  transition: 0.5s;
+  padding: 10px 20px;
+  width: 80%;
+}
+
+#resp {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .form-container {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+}
+
+
+.card--match{
+  display: flex;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px;
+  max-height: 150px;
+}
+
+.card--match figure{
+  width: 30%;
+  margin-right: 10px;
+}
+
+.card--match img{
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  max-height: 100%;
+  object-fit: cover;
+}
+.card--match h4{
+  color: #ff6f63;
+}
+.card--match li {
+  text-align: start;
+}
+
+#container--match{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .form-container {
+    height: 77%;
+  }
+  #second_supp, .secondary-button{
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .form-container {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  #navbar {
+    display: none;
+  }
+  .petder {
+    margin-top: 12px;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 23px;
+  }
+
+  .petder .logo {
+    border-bottom: 3px solid;
+    line-height: 40px;
+  }
+}
+
+
+@media screen and (max-width: 588px){
+
+  .links {
+    display: none;
+  }
+
+  #resp {
+    display: inline-block;
+  }
+
+  .low_links{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
