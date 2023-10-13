@@ -8,16 +8,19 @@ body {
   background-position: 0;
   font-family: "Readex Pro", sans-serif;
   height: 100vh;
-  
+
 }
+
 ::-webkit-scrollbar {
   width: 7px;
   background: #fe3175;
 }
+
 ::-webkit-scrollbar-thumb {
   border: solid 0 transparent;
   background-color: #ffffff;
 }
+
 * {
   list-style: none;
   margin: 0;
@@ -29,7 +32,7 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-nav{
+nav {
   display: none;
 }
 
@@ -90,7 +93,8 @@ nav{
   color: white;
 }
 
-#mySidenav, .openBtn{
+#mySidenav,
+.openBtn {
   display: none;
 }
 
@@ -123,7 +127,7 @@ nav{
   text-align: center;
   overflow-y: scroll;
   height: 95%;
-    width: 95%;
+  width: 95%;
 }
 
 .petder {
@@ -150,7 +154,6 @@ nav{
   color: white;
   font-size: 20px;
   text-transform: uppercase;
-  margin-top: 20px;
 }
 
 .form-content p {
@@ -169,7 +172,7 @@ form {
   width: 100%;
 }
 
-.fa-heart{
+.fa-heart {
   color: #FFACE4;
 }
 
@@ -185,6 +188,7 @@ form {
   transition: 0.3s;
   outline: none;
 }
+
 ::placeholder {
   color: white;
   text-transform: uppercase;
@@ -204,12 +208,12 @@ form {
   margin: 5px;
 }
 
-.hobbies div{
+.hobbies div {
   display: inline-block;
   margin: 5px;
 }
 
-.newColor{
+.newColor {
   position: relative;
   display: inline-block;
   background: transparent;
@@ -222,7 +226,8 @@ form {
   font-weight: bold;
   -webkit-tap-highlight-color: transparent;
 }
-.newC{
+
+.newC {
   font-weight: bold;
   -webkit-tap-highlight-color: transparent;
   color: #ffffff;
@@ -230,7 +235,8 @@ form {
   background: transparent;
   border: 0px white solid;
 }
-.newColorb{
+
+.newColorb {
   font-weight: bold;
   -webkit-tap-highlight-color: transparent;
   color: #ffffff;
@@ -238,9 +244,11 @@ form {
   background: transparent;
   border: 0px white solid;
 }
+
 input.newC:focus-visible {
   outline: none;
 }
+
 .radio div label span {
   position: relative;
   display: inline-block;
@@ -254,26 +262,28 @@ input.newC:focus-visible {
   font-weight: bold;
   -webkit-tap-highlight-color: transparent;
 }
-.radio div label input:hover ~ span {
+
+.radio div label input:hover~span {
   background: white;
   color: #e91e63;
   box-shadow: 0 2px 20px white;
 }
 
-.radio div label input:active ~ span {
-  background: white;
-  color: #e91e63;
-  box-shadow: 0 2px 20px white;
-}
-.radio div label input:checked ~ span {
+.radio div label input:active~span {
   background: white;
   color: #e91e63;
   box-shadow: 0 2px 20px white;
 }
 
+.radio div label input:checked~span {
+  background: white;
+  color: #e91e63;
+  box-shadow: 0 2px 20px white;
+}
 
 
-.radio div label input[type="checkbox"]:checked ~ span {
+
+.radio div label input[type="checkbox"]:checked~span {
   background: white;
   color: #e91e63;
   box-shadow: 0 2px 20px white;
@@ -304,6 +314,20 @@ input:focus {
   display: none;
 }
 
+
+.description {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description a {
+  fill: red;
+  font-size: 23px;
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 900px) {
   .form-container {
     height: 100%;
@@ -313,7 +337,7 @@ input:focus {
 }
 
 
-.card--match{
+.card--match {
   display: flex;
   width: 80%;
   background-color: #ffffff;
@@ -322,29 +346,31 @@ input:focus {
   max-height: 150px;
 }
 
-.card--match figure{
+.card--match figure {
   width: 30%;
   margin-right: 10px;
 }
 
-.card--match img{
+.card--match img {
   height: 100%;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 8px 0px 0px 8px;
   max-height: 100%;
   object-fit: cover;
 }
-.card--match h4{
+
+.card--match h4 {
   color: #ff6f63;
 }
+
 .card--match li {
   text-align: start;
 }
 
-#container--match{
+#container--match {
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -352,7 +378,9 @@ input:focus {
   .form-container {
     height: 77%;
   }
-  #second_supp, .secondary-button{
+
+  #second_supp,
+  .secondary-button {
     font-size: 15px !important;
   }
 }
@@ -369,6 +397,7 @@ input:focus {
   #navbar {
     display: none;
   }
+
   .petder {
     margin-top: 12px;
     display: block;
@@ -386,7 +415,7 @@ input:focus {
 }
 
 
-@media screen and (max-width: 588px){
+@media screen and (max-width: 588px) {
 
   .links {
     display: none;
@@ -396,7 +425,7 @@ input:focus {
     display: inline-block;
   }
 
-  .low_links{
+  .low_links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;

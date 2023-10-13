@@ -32,7 +32,7 @@ require('config/setting.php');
             <?php echo $_SESSION['error_inscription']; ?>
           </p>
         <?php } ?>
-        <form action="inscription.php" method="POST"  enctype="multipart/form-data">
+        <form action="inscription.php" method="POST" enctype="multipart/form-data">
           <h3>Dites nous en plus à propos de vous</h3>
           <div class="main-informations">
             <label for="name">
@@ -47,42 +47,12 @@ require('config/setting.php');
             <label for="description">
               <input type="text" id="description" placeholder="Description" name="description" required />
             </label> <br>
-             <label for="visuel">  <h4>Photo de profil :</h4></label>
-            <input  type="file" class="form-control" id="visuel" name="visuel" required />
+            <label for="visuel">
+              <h4>Photo de profil :</h4>
+            </label>
+            <input type="file" class="form-control" id="visuel" name="visuel" required />
           </div>
 
-     
-           
-          
-
-          <h4>Couleur :</h4>
-          <div class="hobbies radio" id="couleurContainer">
-            <?php
-            $data = $conn->prepare('SELECT * FROM couleur');
-            $data->execute();
-            $couleurs = $data->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($couleurs as $couleur):
-              ?>
-              <div>
-                <label for="<?= $couleur['couleur']; ?>">
-                  <input id="<?= $couleur['couleur']; ?>" type="radio" name="couleur" value="<?= $couleur['couleur']; ?>"
-                    required />
-                  <span>
-                    <?= $couleur['couleur']; ?>
-                  </span>
-                </label>
-              </div>
-            <?php endforeach; ?>
-          </div>
-          <div>
-            <div class="newColor">
-              <label for="newColor">
-                <input type="text" id="newColor" class="newC" placeholder="Ajoutez" name="newColor" />
-              </label>
-              <button type="button" class="newColorb" onclick="ajouterCouleur()">+</button>
-            </div>
-          </div>
 
           <h4>Espèce :</h4>
           <div class="hobbies radio" id="especeContainer">
@@ -91,12 +61,11 @@ require('config/setting.php');
             $data->execute();
             $especes = $data->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($especes as $espece):
-              ?>
+            foreach ($especes as $espece) :
+            ?>
               <div>
                 <label for="<?= $espece['espece']; ?>">
-                  <input id="<?= $espece['espece']; ?>" type="radio" name="espece" value="<?= $espece['espece']; ?>"
-                    required />
+                  <input id="<?= $espece['espece']; ?>" type="radio" name="espece" value="<?= $espece['espece']; ?>" required />
                   <span>
                     <?= $espece['espece']; ?>
                   </span>
@@ -105,15 +74,26 @@ require('config/setting.php');
             <?php endforeach; ?>
           </div>
 
-          <div class="newColor">
-            <label for="newEspece">
-              <input type="text" id="newEspece" class="newC" placeholder="Ajoutez" name="newEspece" />
-            </label>
-            <button type="button" class="newColorb" onclick="ajouterEspece()">+</button>
+
+          <h4>Couleur :</h4>
+          <div class="hobbies radio" id="couleurContainer">
+            <?php
+            $data = $conn->prepare('SELECT * FROM couleur');
+            $data->execute();
+            $couleurs = $data->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($couleurs as $couleur) :
+            ?>
+              <div>
+                <label for="<?= $couleur['couleur']; ?>">
+                  <input id="<?= $couleur['couleur']; ?>" type="radio" name="couleur" value="<?= $couleur['couleur']; ?>" required />
+                  <span>
+                    <?= $couleur['couleur']; ?>
+                  </span>
+                </label>
+              </div>
+            <?php endforeach; ?>
           </div>
-
-
-
           <h4>Âge :</h4>
           <div class="hobbies radio" id="ageContainer">
             <?php
@@ -121,12 +101,11 @@ require('config/setting.php');
             $data->execute();
             $ages = $data->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($ages as $age):
-              ?>
+            foreach ($ages as $age) :
+            ?>
               <div>
                 <label for="<?= $age['age']; ?>">
-                  <input id="<?= $age['age']; ?>" type="radio" name="age" value="<?= $age['age']; ?>"
-                    required />
+                  <input id="<?= $age['age']; ?>" type="radio" name="age" value="<?= $age['age']; ?>" required />
                   <span>
                     <?= $age['age']; ?>
                   </span>
@@ -134,16 +113,6 @@ require('config/setting.php');
               </div>
             <?php endforeach; ?>
           </div>
-
-          <div class="newColor">
-            <label for="newAge">
-              <input type="text" id="newAge" class="newC" placeholder="Ajoutez" name="newAge" />
-            </label>
-            <button type="button" class="newColorb" onclick="ajouterAge()">+</button>
-          </div>
-
-
-
 
           <input class="btn-login" type="submit" value="Inscription" />
         </form>

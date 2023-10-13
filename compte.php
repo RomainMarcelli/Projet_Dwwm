@@ -54,14 +54,19 @@ if (empty($_SESSION['username'])) {
 
             <h3>Modifier votre compte</h3>
             <?php
-              // Vérifie si la variable de session existe et affiche un message si c'est le cas
-              if (isset($_SESSION['compte_modifie']) && $_SESSION['compte_modifie']) {
-                echo '<p>Le compte a été modifié avec succès.</p>';
+            // Vérifie si la variable de session existe et affiche un message si c'est le cas
+            if (isset($_SESSION['compte_modifie']) && $_SESSION['compte_modifie']) {
+              echo '<p>Le compte a été modifié avec succès.</p>';
 
-                // Supprime la variable de session pour ne pas afficher le message à nouveau
-                unset($_SESSION['compte_modifie']);
-              }
-              ?>
+              // Supprime la variable de session pour ne pas afficher le message à nouveau
+              unset($_SESSION['compte_modifie']);
+            }
+            // Vérifie si rien n'a été modifié
+            if (isset($_SESSION['aucune_modif']) && $_SESSION['aucune_modif']) {
+              echo '<p class="info-message">Aucune modification à été réalisé</p>';
+              unset($_SESSION['aucune_modif']);
+            }
+            ?>
 
             <?php
             if (isset($_SESSION['error_inscription'])) { ?>
@@ -100,7 +105,25 @@ if (empty($_SESSION['username'])) {
               </div>
 
 
+              <h4>Espèces :</h4>
+              <div class="hobbies radio" id="especeContainer">
+                <?php
+                $data = $conn->prepare('SELECT * FROM espece');
+                $data->execute();
+                $especes = $data->fetchAll(PDO::FETCH_ASSOC);
 
+                foreach ($especes as $espece) :
+                ?>
+                  <div>
+                    <label for="<?= $espece['espece']; ?>">
+                      <input id="<?= $espece['espece']; ?>" <?php if ($espece['espece'] == $users['espece']) { ?> checked <?php }; ?> type="radio" name="espece" value="<?= $espece['espece']; ?>" required />
+                      <span>
+                        <?= $espece['espece']; ?>
+                      </span>
+                    </label>
+                  </div>
+                <?php endforeach; ?>
+              </div>
 
 
               <h4>Couleur :</h4>
@@ -122,43 +145,6 @@ if (empty($_SESSION['username'])) {
                   </div>
                 <?php endforeach; ?>
               </div>
-              <div>
-                <div class="newColor">
-                  <label for="newColor">
-                    <input type="text" id="newColor" class="newC" placeholder="Ajoutez" name="newColor" />
-                  </label>
-                  <button type="button" class="newColorb" onclick="ajouterCouleur()">+</button>
-                </div>
-              </div>
-
-              <h4>Espèces :</h4>
-              <div class="hobbies radio" id="especeContainer">
-                <?php
-                $data = $conn->prepare('SELECT * FROM espece');
-                $data->execute();
-                $especes = $data->fetchAll(PDO::FETCH_ASSOC);
-
-                foreach ($especes as $espece) :
-                ?>
-                  <div>
-                    <label for="<?= $espece['espece']; ?>">
-                      <input id="<?= $espece['espece']; ?>" <?php if ($espece['espece'] == $users['espece']) { ?> checked <?php }; ?> type="radio" name="espece" value="<?= $espece['espece']; ?>" required />
-                      <span>
-                        <?= $espece['espece']; ?>
-                      </span>
-                    </label>
-                  </div>
-                <?php endforeach; ?>
-              </div>
-
-              <div class="newColor">
-                <label for="newEspece">
-                  <input type="text" id="newEspece" class="newC" placeholder="Ajoutez" name="newEspece" />
-                </label>
-                <button type="button" class="newColorb" onclick="ajouterEspece()">+</button>
-              </div>
-
-
 
               <h4>Âge :</h4>
               <div class="hobbies radio" id="ageContainer">
@@ -179,15 +165,6 @@ if (empty($_SESSION['username'])) {
                   </div>
                 <?php endforeach; ?>
               </div>
-
-              <div class="newColor">
-                <label for="newAge">
-                  <input type="text" id="newAge" class="newC" placeholder="Ajoutez" name="newAge" />
-                </label>
-                <button type="button" class="newColorb" onclick="ajouterAge()">+</button>
-              </div>
-
-
 
 
               <input class="btn-login" type="submit" value="Modifier" />

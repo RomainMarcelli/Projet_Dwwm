@@ -66,16 +66,53 @@ if (empty($_SESSION['username'])) {
                 <figure>
                   <img src=<?= $pair['image'] ?> alt="#">
                 </figure>
-                <div>
-                  <h4><?= $pair['username'] ?></h4>
-                  <ul>
-                    <li><?= $pair['age'] ?></li>
-                    <li><?= $pair['espece'] ?></li>
-                    <li><?= $pair['couleur'] ?></li>
-                  </ul>
+                <div class="description">
+                  <div>
+                    <h4><?= $pair['username'] ?></h4>
+                    <ul>
+                      <li><?= $pair['age'] ?></li>
+                      <li><?= $pair['espece'] ?></li>
+                      <li><?= $pair['couleur'] ?></li>
+                    </ul>
+
+                  </div>
+                  
+                  <script>
+                    function deletePair(element) {
+                      var pairId = element.getAttribute("data-id");
+
+                      if (confirm('Êtes-vous sûr de vouloir supprimer cette paire ?')) {
+                        $.ajax({
+                          type: 'POST', // Utilisez POST ou GET selon votre implémentation côté serveur.
+                          url: 'supprimer_paire.php', // L'URL pour le script PHP de suppression.
+                          data: {
+                            pairId: pairId
+                          },
+                          success: function(response) {
+                            // Gérer la réponse du serveur, par exemple, actualiser la page.
+                            location.reload();
+                          },
+                          error: function() {
+                            alert('Une erreur s\'est produite lors de la suppression de la paire.');
+                          }
+                        });
+                      }
+                    }
+                  </script>
+                  
+                  <a href="supprimer_paire.php" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet animal ?');">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                      <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+                    </svg>
+                  </a>
+                  <!-- <a href="#" data-id="<?= $pair['ID'] ?>" onclick="deletePair(); return false;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                      <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+                    </svg>
+                  </a> -->
+
 
                 </div>
-
               </article>
             <?php endif
             ?>

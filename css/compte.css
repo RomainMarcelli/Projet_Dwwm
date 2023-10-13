@@ -415,6 +415,10 @@ input:focus {
   #navbar {
     display: none;
   }
+  
+  .btn_supp{
+    margin-right: 5px;
+  }
 
   .btn_supp,
   .secondary-button {

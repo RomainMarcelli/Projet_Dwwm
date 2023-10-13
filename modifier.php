@@ -63,7 +63,18 @@ if (!empty($_POST['password'])) {
 }
 
 // Après avoir mis à jour le compte avec succès
-$_SESSION['compte_modifie'] = true;
+if (
+  ($_POST['name'] !== $users['username']) ||
+  ($_POST['email'] !== $users['email']) ||
+  ($_POST['couleur'] !== $users['couleur']) ||
+  ($_POST['espece'] !== $users['espece']) ||
+  ($_POST['age'] !== $users['age']) ||
+  ($_POST['description'] !== $users['description']) ||
+  !empty($_FILES['visuel']['name']) // Vérifie s'il y a un nouveau visuel
+) {
+  // Des modifications ont été apportées
+  $_SESSION['compte_modifie'] = true;
+}
 
 $_SESSION['username'] = $_POST['name'];
   // Redirection vers l'accueil
